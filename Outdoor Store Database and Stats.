@@ -1,0 +1,31 @@
+--Create an outdoor store database 
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY, item TEXT, cost INTEGER, inventory INTEGER, sold INTEGER);
+
+INSERT INTO Store VALUES (1,"bike", 99.99, 11, 187);
+INSERT INTO Store VALUES (2, "tent", 360.50, 32, 683);
+INSERT INTO Store VALUES (3, "tennis racket", 34.84, 7, 37); 
+INSERT INTO Store VALUES (4, "soccer ball", 25.72, 17, 86); 
+INSERT INTO Store VALUES (5, "climbing shoes", 68.11, 69, 923);
+INSERT INTO Store VALUES (6, "volleyball", 19.82, 13, 46); 
+INSERT INTO Store VALUES (7, "kayak", 299.99, 9, 124); 
+INSERT INTO Store VALUES (8, "paddleboard", 278.99, 11, 75); 
+INSERT INTO Store VALUES (9, "snowboard", 152.43, 63, 523); 
+INSERT INTO Store VALUES (10, "fishing pole", 73.21, 42, 512); 
+INSERT INTO Store VALUES (11, "basketball", 23.48, 22, 41); 
+INSERT INTO Store VALUES (12, "lacrosse stick", 83.34, 22, 64); 
+INSERT INTO Store VALUES (13, "bathing suit", 39.99, 45, 837); 
+INSERT INTO Store VALUES (14, "roller skates", 169.99, 25, 84); 
+INSERT INTO Store VALUES (15, "beanie hat", 18.19, 27, 253); 
+
+--Display the database ordered by price from cheapest to most expensive. 
+SELECT * FROM store
+ORDER BY cost asc;
+
+-- Display the number of items sold. 
+SELECT SUM(sold) FROM Store;
+
+--What are the 3 least popular items? 
+SELECT item, cost, sold FROM store
+order by sold asc
+limit 3; 
